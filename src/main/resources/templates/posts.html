@@ -2,23 +2,11 @@
 <!--Referenciando o Thymeleaf-->
 <html xmlns:th="http://thymeleaf.org">
 
-<head>
-    <title>MyCodeBlog</title>
-
-    <!--CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
-        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
-
-</head>
+<div th:replace="includes/head :: head"></div>
+<div th:replace="includes/header :: header"></div>
 
 <body>
-    <header>
-        <nav class="navbar navbar-dark bg-dark">
-            <span class="navbar-brand mb-0 h1" style="font-weight: bold;">MyCodeBlog</span>
-        </nav>
 
-
-    </header>
 
     <section>
         <!--Listagem de poster-->
@@ -26,7 +14,7 @@
             <!--breadcrumb - Voltar para home-->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb" style="background-color: white;padding-left: 0px;">
-                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    <li class="breadcrumb-item active" aria-current="page">Posts</li>
                 </ol>
             </nav>
             <!--Cards dos posters-->
@@ -37,7 +25,8 @@
                         <span th:text="${post.autor}"></span>,
                         <span th:text="${post.data}"></span>
                     </p>
-                    <a href="">
+                    <!--CC = sigla do controler#nomeDoMetodo-->
+                    <a th:href="${(#mvc.url('CC#getPostDetails').arg(0, post.id)).build()}">
                         <h5 class="card-title" style="font-weight: bold; padding-top: 5px; ">
                             <span th:text="${post.titulo}"></span>
                         </h5>
@@ -53,6 +42,7 @@
 
 
     </section>
+
 </body>
 
 
