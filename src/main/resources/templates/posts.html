@@ -1,4 +1,6 @@
-<html>
+<!DOCTYPE html>
+<!--Referenciando o Thymeleaf-->
+<html xmlns:th="http://thymeleaf.org">
 
 <head>
     <title>MyCodeBlog</title>
@@ -28,12 +30,22 @@
                 </ol>
             </nav>
             <!--Cards dos posters-->
-            <div class="card text-white bg-dark mb-3" style="margin-top: 20px;">
-                <div class="card-header">Header</div>
+            <div class="card text-white bg-dark mb-3" style="margin-top: 20px;" th:each="post :${posts}">
+                <div class="card-header">Post#<span th:text="${post.id}"></span></div>
                 <div class="card-body">
-                    <h5 class="card-title">Dark card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
+                        <span th:text="${post.autor}"></span>,
+                        <span th:text="${post.data}"></span>
+                    </p>
+                    <a href="">
+                        <h5 class="card-title" style="font-weight: bold; padding-top: 5px; ">
+                            <span th:text="${post.titulo}"></span>
+                        </h5>
+                    </a>
+
+                    <p class="card-text">
+                        <span th:utext="${#strings.abbreviate(post.texto,400)}"></span>
+                    </p>
                 </div>
             </div>
 
