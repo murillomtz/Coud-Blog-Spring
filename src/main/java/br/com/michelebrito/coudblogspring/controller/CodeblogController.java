@@ -26,7 +26,7 @@ public class CodeblogController {
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public ModelAndView getPosts() {
 
-        ModelAndView mv = new ModelAndView("posts"); //Mesmo nome da pagina HTML
+        ModelAndView mv = new ModelAndView("posts"); // Mesmo nome da pagina HTML
         List<Post> posts = codeblogService.findAll();
         mv.addObject("posts", posts);
         return mv;
@@ -35,22 +35,23 @@ public class CodeblogController {
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
     public ModelAndView getPostDetails(@PathVariable("id") long id) {
 
-        ModelAndView mv = new ModelAndView("postDetails"); //Mesmo nome da pagina HTML
+        ModelAndView mv = new ModelAndView("postDetails"); // Mesmo nome da pagina HTML
         Post post = codeblogService.findById(id);
         mv.addObject("post", post);
         return mv;
     }
 
     @RequestMapping(value = "/newpost", method = RequestMethod.GET)
-    public String getPostForm(){
+    public String getPostForm() {
         return "postForm";
     }
 
     @RequestMapping(value = "/newpost", method = RequestMethod.POST)
-    public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes){
-        //BindingResult e RedirectAttributes 
+    public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes) {
+        // BindingResult e RedirectAttributes
 
-        if(result.hasErrors()){
+        if (result.hasErrors()) {
+            attributes.addFlashAttribute("mensagem", "Verifique se os campos obrigatorios foram preechidos!");
             return "redirect:/newpost";
         }
         post.setData(LocalDate.now());

@@ -6,8 +6,6 @@
 <div th:replace="includes/header :: header"></div>
 
 <body>
-
-
     <section>
         <!--Listagem de poster-->
         <div class="container" style="width: 60%; padding-bottom: 30px;">
@@ -19,7 +17,7 @@
                 </ol>
             </nav>
             <div>
-                <!--<th:block th:include="mensagemValidacao"></th:block>-->
+                <th:block th:include="mensagemValidacao"></th:block>
                 <form method="post">
                     <div class="form-group">
                         <input type="text" class="form-control" name="titulo" placeholder="Título *">
@@ -38,12 +36,17 @@
                     <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
                 </form>
             </div>
-
         </div>
-
-
     </section>
 
+    <script>
+
+        $('#summernote').summernote({
+            placeholde: 'Texto *',
+            tabsize: 2,
+            height: 300
+        });
+    </script>
 </body>
 
 
