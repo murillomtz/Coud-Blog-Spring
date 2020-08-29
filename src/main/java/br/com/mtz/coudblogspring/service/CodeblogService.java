@@ -1,8 +1,8 @@
-package br.com.michelebrito.coudblogspring.service;
+package br.com.mtz.coudblogspring.service;
 
 import java.util.List;
 
-import br.com.michelebrito.coudblogspring.model.Post;
+import br.com.mtz.coudblogspring.model.Post;
 
 public interface CodeblogService {
     

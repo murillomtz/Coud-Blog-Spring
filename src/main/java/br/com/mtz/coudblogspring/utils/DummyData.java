@@ -1,12 +1,11 @@
-package br.com.michelebrito.coudblogspring.utils;
+package br.com.mtz.coudblogspring.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.michelebrito.coudblogspring.model.Post;
-import br.com.michelebrito.coudblogspring.repository.CodeblogRepository;
+import br.com.mtz.coudblogspring.model.Post;
+import br.com.mtz.coudblogspring.repository.CodeblogRepository;
 
-import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

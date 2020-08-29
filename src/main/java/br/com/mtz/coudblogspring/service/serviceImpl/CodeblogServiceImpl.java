@@ -1,13 +1,12 @@
-package br.com.michelebrito.coudblogspring.service.serviceImpl;
+package br.com.mtz.coudblogspring.service.serviceImpl;
 
 import java.util.List;
 
+import br.com.mtz.coudblogspring.model.Post;
+import br.com.mtz.coudblogspring.repository.CodeblogRepository;
+import br.com.mtz.coudblogspring.service.CodeblogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import br.com.michelebrito.coudblogspring.model.Post;
-import br.com.michelebrito.coudblogspring.repository.CodeblogRepository;
-import br.com.michelebrito.coudblogspring.service.CodeblogService;
 
 @Service
 public class CodeblogServiceImpl implements CodeblogService {

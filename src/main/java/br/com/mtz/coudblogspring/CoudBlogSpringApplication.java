@@ -1,4 +1,4 @@
-package br.com.michelebrito.coudblogspring;
+package br.com.mtz.coudblogspring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

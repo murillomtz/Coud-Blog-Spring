@@ -1,4 +1,4 @@
-package br.com.michelebrito.coudblogspring.model;
+package br.com.mtz.coudblogspring.model;
 
 import java.time.LocalDate;
 
